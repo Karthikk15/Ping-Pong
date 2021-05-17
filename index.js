@@ -138,7 +138,7 @@ function checkBallBoudries() {
 // Method controlling computer player.
 function compPlayer() {
     if(hasUserMovedPaddle && isBallContactedWithPaddle) {
-        paddleTopX += speedX > 0 ? speedX - 0.2 : speedX + 0.2;
+        paddleTopX += speedX > 0 ? speedX - 0.1 : speedX + 0.1;
     }
 }
 //Method which contains required functionalities to re-paint on every refresh.
@@ -172,3 +172,8 @@ function gameStart() {
 
 //On Load
 gameStart();
+
+// On Resize
+window.addEventListener('resize', () => {
+    canvasPosition = window.innerWidth / 2 - canvasWidth /2;
+})
